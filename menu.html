@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet - Panel Principal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="menu.html">
+                <i class="fas fa-wallet me-2"></i>Alke Wallet
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">
+                            <i class="fas fa-home me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">
+                            <i class="fas fa-history me-1"></i>Movimientos
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i><span id="navUsername">Usuario</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Configuración</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle me-2"></i>Ayuda</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Welcome Message -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3 class="welcome-message">¡Bienvenido, <span id="welcomeUsername">Usuario</span>!</h3>
+                <p class="text-muted">Gestiona tus finanzas de forma segura y sencilla</p>
+            </div>
+        </div>
+
+        <!-- Balance Card -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card balance-card text-white shadow-lg">
+                    <div class="card-body p-4">
+                        <h5 class="card-title mb-3">
+                            <i class="fas fa-wallet me-2"></i>Saldo Disponible
+                        </h5>
+                        <h2 class="display-4 mb-0" id="currentBalance">$0.00</h2>
+                        <small class="text-white-50">CLP - Pesos Chilenos</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card action-card h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="action-icon bg-success bg-opacity-10 mb-3">
+                            <i class="fas fa-plus-circle fa-3x text-success"></i>
+                        </div>
+                        <h5 class="card-title">Depositar</h5>
+                        <p class="card-text text-muted">Agregar fondos a tu cuenta</p>
+                        <a href="deposit.html" class="btn btn-success stretched-link">
+                            <i class="fas fa-arrow-right me-2"></i>Ir
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card action-card h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="action-icon bg-primary bg-opacity-10 mb-3">
+                            <i class="fas fa-paper-plane fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Enviar Dinero</h5>
+                        <p class="card-text text-muted">Transferir a contactos</p>
+                        <a href="sendmoney.html" class="btn btn-primary stretched-link">
+                            <i class="fas fa-arrow-right me-2"></i>Ir
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card action-card h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="action-icon bg-info bg-opacity-10 mb-3">
+                            <i class="fas fa-history fa-3x text-info"></i>
+                        </div>
+                        <h5 class="card-title">Movimientos</h5>
+                        <p class="card-text text-muted">Ver historial completo</p>
+                        <a href="transactions.html" class="btn btn-info stretched-link">
+                            <i class="fas fa-arrow-right me-2"></i>Ir
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card action-card h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="action-icon bg-warning bg-opacity-10 mb-3">
+                            <i class="fas fa-chart-line fa-3x text-warning"></i>
+                        </div>
+                        <h5 class="card-title">Estadísticas</h5>
+                        <p class="card-text text-muted">Análisis de gastos</p>
+                        <a href="#" class="btn btn-warning stretched-link" onclick="alert('Función próximamente'); return false;">
+                            <i class="fas fa-arrow-right me-2"></i>Ir
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-clock me-2"></i>Últimos Movimientos
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="recentTransactions">
+                            <div class="text-center text-muted py-4">
+                                <i class="fas fa-inbox fa-3x mb-3 opacity-50"></i>
+                                <p>No hay transacciones recientes</p>
+                                <a href="deposit.html" class="btn btn-sm btn-primary">Realizar primer depósito</a>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="transactions.html" class="btn btn-outline-primary">
+                                Ver todos los movimientos <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 py-4 bg-light">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                <small>&copy; 2026 Alke Wallet. Plataforma segura para tus finanzas digitales.</small>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
